@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://example.com/translator"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <wsdl:types>
+        <xsd:schema elementFormDefault="qualified" targetNamespace="http://example.com/translator">
+            <xsd:element name="translateRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="wordKey" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="translateResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="translation" type="xsd:string"/>
+                        <xsd:element name="pronunciation" type="xsd:string"/>
+                        <xsd:element name="additionalInfo" type="xsd:string"/>
+                        <xsd:element name="mp3File" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="translateRequestMessage">
+        <wsdl:part name="parameters" element="tns:translateRequest"/>
+    </wsdl:message>
+
+    <wsdl:message name="translateResponseM
